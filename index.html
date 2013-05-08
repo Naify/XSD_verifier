@@ -12,10 +12,10 @@
 			<p class="welcome"> Welcome to XSD verifier! </p>
 		</div>
 		<pre>         XML                    XSD </pre>		<!--Мракобесие!!!!!-->
-		<form action="server.py" method="post" target="hiddenframe" enctype="multipart/form-data" onsubmit="hideBtn();">
-			<input type="file" id="xml" />
-			<input type="file" id="xsd" />
-			<input type="submit" name="upload" id="upload" value="Upload" />
+		<form action="server/server.py" method="post" target="hiddenframe" enctype="multipart/form-data">
+			<input type="file" name="xml" />
+			<input type="file" name="xsd" />
+			<input type="submit" id="upload" value="Upload" />
 		</form>
 		<div id="res"></div> <!--не виден-->
 		
