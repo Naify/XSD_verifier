@@ -8,35 +8,58 @@ import time
 import cgi
 import cgitb
 import lxml
+from lxml import etree
 
 cgitb.enable()
 # Извлечение данных о запросе
 form_data = cgi.FieldStorage()
-file_data = form_data.getvalue('xml')
+xml_data = form_data.getvalue('xml')
+xsd_data = form_data.getvalue('xsd')
+'''
+	Первый вариант
+	Напрямую в парсер - premature end of script
+'''
+# xsd_data = ('''
+# <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ # <xsd:element name="a" type="xsd:integer"/>
+# </xsd:schema> ''')
+# xml_data = "<a>5</a>"
 
-# Извлечение полей запроса
-#action = data.getvalue("action") 
-
-# def answer():
-	# fp =open('some/file','wb')
-	# fp.write(file_data)
-	# fp.close()
-
-#sys.stderr.write(file_data)
-
-print "Content-Type: text/xml"
-print
-print file_data
-
-# answer()
-
-# schema_root = etree.XML('''\
-# ...   <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-# ...     <xsd:element name="a" type="xsd:integer"/>
-# ...   </xsd:schema>
-# ... ''')
+# schema_root = etree.XML(xsd_data)
 # schema = etree.XMLSchema(schema_root)
 # parser = etree.XMLParser(schema = schema)
-# root = etree.fromstring("<a>5</a>", parser)
+# root = etree.fromstring(xml_data, parser)
+
+'''
+	Второй вариант
+	Сохранить присланные xml и xsd файлы на диск, потом отрыть и пропарсить...
+'''
+# Запись прихоящей схемы в фаил
+xsd_file = open("schema.xsd","w")
+xsd_file.write(xsd_data)
+xsd_file.close()
+# Чтение схемы из файла
+xsd_file = open ('schema.xsd','r')
+# Парсинг схемы
+xmlschema_doc = etree.parse(xsd_file)
+xmlschema = etree.XMLSchema(xmlschema_doc)
+xsd_file.close()
+# Запись приходящего xml файла на диск
+xml_file = open('document.xml','w')
+xml_file.write(xml_data)
+xml_file.close()
+# Чтение xml файла 
+xml_file = open ('document.xml')
+# Парсинг XML и валидация 
+doc = etree.parse(xml_file)
+if not xmlschema(doc):
+	print "Content-Type: text/plain"
+	print
+	print "invalid!"
+else: 
+	print "Content-Type: text/plain"
+	print
+	print "valid!"
+xml_file.close()
 
 sys.exit(0)
