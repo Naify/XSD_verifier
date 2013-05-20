@@ -10,5 +10,7 @@ function handleResponse(mes) {
 	}   
 	else {
 		$('#res').html("File " + mes.name + " loaded");   
-	}   
+	}
+
+
 }
