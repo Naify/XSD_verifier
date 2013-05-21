@@ -71,7 +71,7 @@
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
-                  <xs:attribute name="local_id" type="xs:string" use="required" />
+                  <xs:attribute name="local_id" type="xs:string" />
                   <xs:attribute name="scheme" type="xs:string" use="required" />
                   <xs:attribute name="type" type="xs:string" use="required" />
                 </xs:complexType>

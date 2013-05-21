@@ -12,10 +12,13 @@
 			<p class="welcome"> Welcome to XSD verifier! </p>
 		</div>
 		<pre>         XML                    XSD </pre>		<!--Мракобесие!!!!!-->
-		<form action="server/server.py" method="post" target="logbox" enctype="multipart/form-data">
+		<form name="theForm" action="server/server.py" method="post" target="logbox" enctype="multipart/form-data">
 			<input type="file" name="xml" />
 			<input type="file" name="xsd" />
-			<input type="submit" id="upload" value="Upload" />
+			<input type="hidden" name="func" id="func" value="null" />
+			<input type="submit" id="upload" value="Vali" onclick="document.theForm.func.value='comlpval'" />
+			<input type="submit" id="xmlval" value="Validate XML" onclick="document.theForm.func.value='xmlval'" />
+			<input type="submit" id="xsdval" value="validate XSD" onclick="document.theForm.func.value='xsdval'" />
 		</form>
 		<iframe id="logbox" name="logbox"></iframe>
 	</div>
