@@ -18,6 +18,7 @@ xsd_data = form_data.getvalue('xsd')
 func = form_data.getvalue('func')
 
 def complval():
+	# Функция для комплексной валидации
 	'''
 		Первый вариант
 		Текст xml и xsd в парсер сразу
@@ -26,12 +27,16 @@ def complval():
 	print "Content-Type: text/html\r\n\r"
 	try:
 		schema_root = etree.XML(xsd_data)
+		# Создает из документа валидатор
 		schema = etree.XMLSchema(schema_root)
+		# Создает парсер против напротив которого идет валидация
 		parser = etree.XMLParser(schema = schema)
+		# Валидация с использованием заданного парсера
 		root = etree.fromstring(xml_data, parser)
-		print 'Valid!'
+		print 'Validation succeed!'
 
 	except Exception, e:
+		# Вывод ошибки (код ошибки, строка, сама ошибка)
 		log = e.error_log.filter_from_level(etree.ErrorLevels.ERROR)
 		print log
 		
@@ -67,20 +72,22 @@ def complval():
 	'''
 
 def xmlval():
+	# Функция для валидации только xml файла
 	print "Content-Type: text/html\r\n\r"
 	try:
 		xmlcheck = etree.XML(xml_data)
-		print 'Valid!'
+		print 'XML Valid!'
 
 	except Exception, e:
 		log = e.error_log.filter_from_level(etree.ErrorLevels.ERROR)
 		print log
 
 def xsdval():
+	# Функция для валидации только xsd файла
 	print "Content-Type: text/html\r\n\r"
 	try:
 		xsdcheck = etree.XML(xsd_data)
-		print 'Valid!'
+		print 'XSD Valid!'
 
 	except Exception, e:
 		log = e.error_log.filter_from_level(etree.ErrorLevels.ERROR)
@@ -89,10 +96,13 @@ def xsdval():
 
 def func_select():
 	if func == "comlpval":
+		# Функция для комплексной валидации
 		complval()
 	elif func == "xmlval":
+		# Функция для валидации только xml файла
 		xmlval()
 	elif func == "xsdval":
+		# Функция для валидации только xsd файла
 		xsdval()
 
 func_select()

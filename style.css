@@ -5,12 +5,12 @@ body {
 	color: #222;
 	text-align:center;
 	padding:35px; }
-
-pre {
-	text-align:left; }
 	
 input { font:12px arial; }
- 
+
+#sender {
+	width:100%;
+} 
 #wrapper {
 	margin:0 auto;
 	background:#EBF4FB;
