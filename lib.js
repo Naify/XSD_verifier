@@ -1,16 +1,11 @@
+$(document).ready(function() {
 
-function hideBtn(){
-	$('#res').html("File is loading");
-}
-	         
-function handleResponse(mes) {
-	$('#upload').show();
-	if (mes.errors != null) {
-		$('#res').html("Errors: " + mes.errors);
-	}   
-	else {
-		$('#res').html("File " + mes.name + " loaded");   
-	}
-
-
-}
+	$('#former').ajaxForm(function() {
+	
+		success: function(answer){		
+			$("#logbox").html(answer); //Insert chat log into the #chatbox div				
+		}
+		
+	});
+	
+ });
