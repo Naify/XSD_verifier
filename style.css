@@ -4,18 +4,23 @@ body {
 	font:12px arial;
 	color: #222;
 	text-align:center;
-	padding:35px; }
+	padding:35px;
+}
 	
-input { font:12px arial; }
+input {
+	font:12px arial;	
+}
 
 #sender {
 	width:100%;
-} 
+}
+
 #wrapper {
 	margin:0 auto;
 	background:#CECEFF;
 	width:504px;
-	border:1px solid #ACD8F0; }
+	border:1px solid #ACD8F0;
+}
  
 #logbox {
 	text-align:left;
@@ -27,11 +32,31 @@ input { font:12px arial; }
 	height:100px;
 	width:475px;
 	border:1px solid #ACD8F0;
-	overflow:auto; }
+	overflow:auto;
+}
  
-#load { width: 65px; }
+#load { 
+	width: 65px;
+} 
  
+#menu {
+	padding:12.5px 25px 12.5px 25px;
+}
  
-#menu { padding:12.5px 25px 12.5px 25px; }
- 
-.welcome { float:center; }
+ .welcome {
+	float:center;
+	font:16px Sanvito;
+}
+
+.button {
+	width:120px;
+}
+
+.file {
+	width:200px;
+	max-width:200px;
+}
+
+table, td {
+	font:bold 14px arial 
+}
