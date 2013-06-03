@@ -1,21 +1,31 @@
-$(document).ready(function() {
-
-	$('#former').ajaxForm(function() {
-	
-		alert('123');
-		
+$(document).ready(function() { 
+	var options = {
+		target: '#logbox'
 		// success: function(answer){		
 			// $("#logbox").html(answer); //Insert chat log into the #chatbox div				
-		//}
-		
-	});
+		// }
+	};
+
+	$('#former').ajaxForm(options);
+
 	
-});
+	// $('#former').submit(function() {
+		// alert('ololo');
+		// $(this).find(':disabled').removeAttr('disabled');
+		// $(this).ajaxSubmit(options);
+		// return false;
+	// });
 
-// $(document).ready(function() { 
+	// $('#former').ajaxForm(function() {
+		// var options = {
+		  // target: "#logbox",
+		  // url: "server/server.py",
+		  // success: function() {
+			// alert("thx!");
+		  // }
+		// };
 
-	// $('#former').ajaxForm(function() { 
 		// alert("Thank you for your comment!"); 
 	// }); 
 	
-// });
+});

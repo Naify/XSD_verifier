@@ -12,7 +12,7 @@
 		<div id="menu">
 			<p class="welcome"> Welcome to XSD verifier! </p>
 		</div>
-		<form id="former" name="theForm" action="server/server.py" method="post" target="logbox" enctype="multipart/form-data">
+		<form id="former" name="theForm" action="server/server.py" method="post" enctype="multipart/form-data">
 			<table id="sender">
 				<tr>
 					<td>XML</td>
@@ -32,7 +32,7 @@
 			</table>
 			<input type="hidden" name="func" id="func" value="null" />
 		</form>
-		<iframe id="logbox" name="logbox"></iframe>
+		<div id="logbox" name="logbox"></div>
 	</div>
 </body>
 </html>
