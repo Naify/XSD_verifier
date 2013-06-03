@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 	$('#former').ajaxForm(options);
 
-	
+//some changes	
 	// $('#former').submit(function() {
 		// alert('ololo');
 		// $(this).find(':disabled').removeAttr('disabled');
