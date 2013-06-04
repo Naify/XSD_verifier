@@ -16,12 +16,24 @@
 			<table id="sender">
 				<tr>
 					<td>XML</td>
-					<td><input type="file" class="file" name="xml" /></td>
+					<td>
+						<div class="fileform">
+							<div id="fileformlabel"></div>
+							<div class="selectbutton">Browse</div>
+							<input type="file" class="file" name="xml" id="upload" onchange="getName(this.value);" required/>
+						</div>
+					</td>
 					<td><input type="submit" class="button" id="xmlval" value="Validate XML" onclick="document.theForm.func.value='xmlval'" /></td>					
 				</tr>
 				<tr>
 					<td>XSD</td>
-					<td><input type="file" class="file" name="xsd" /></td>
+					<td>
+						<div class="fileform">
+							<div id="fileformlabel"></div>
+							<div class="selectbutton">Browse</div>
+							<input type="file" class="file" name="xsd" id="upload" onchange="getName(this.value);" required/>
+						</div>					
+					</td>
 					<td><input type="submit" class="button" id="xsdval" value="Validate XSD" onclick="document.theForm.func.value='xsdval'" /></td>
 				</tr>
 				<tr>
@@ -30,6 +42,7 @@
 					<td><input type="submit" class="button" id="upload" value="Complete validation" onclick="document.theForm.func.value='comlpval'" /></td>
 				</tr>
 			</table>
+
 			<input type="hidden" name="func" id="func" value="null" />
 		</form>
 		<div id="logbox" name="logbox"></div>
