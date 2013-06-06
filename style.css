@@ -19,7 +19,7 @@ input {
 	margin:0 auto;
 	background:#CECEFF;
 	width:504px;
-	border:1px solid #ACD8F0;
+	border:1px solid #CECEFF;
 }
  
 #logbox {
@@ -30,8 +30,8 @@ input {
 	padding:10px;
 	background:#fff;
 	height:100px;
-	width:475px;
-	border:1px solid #ACD8F0;
+	width:465px;
+	border:1px solid #CECEFF;
 	overflow:auto;
 }
  
@@ -45,11 +45,23 @@ input {
  
  .welcome {
 	float:center;
-	font:16px Sanvito;
+	font:bold 16px Sanvito;
 }
 
 .button {
-	width:120px;
+    background-color: #A2A3A3;
+    border: 1px solid #939494;
+    border-radius: 2px;
+    color: #FFFFFF;
+    float: right;
+	font: bold 14px arial;
+    height: 25px;
+    line-height: 25px;
+    overflow: hidden;
+    padding: 2px 6px;
+    text-align: center;
+    vertical-align: middle;
+    width: 150px;
 }
 
 .file {
@@ -58,7 +70,7 @@ input {
 }
 
 table, td {
-	font:bold 14px arial 
+	font:bold 14px arial; 
 }
 
 .fileform { 
@@ -72,7 +84,7 @@ table, td {
     position: relative;
     text-align: left;
     vertical-align: middle;
-    width: 320px;
+    width: 300px;
 }
 
 .fileform #fileformlabel { 
@@ -84,7 +96,7 @@ overflow: hidden;
 padding: 2px;
 text-align: left;
 vertical-align: middle;
-width:240px;
+width:220px;
 }
 
 .fileform .selectbutton { 
