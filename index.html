@@ -18,24 +18,24 @@
 				<tr>
 					<td>XML</td>
 					<td>
-						<div class="fileform">
+						<div class="fileform" id='fileform0'>
 							<div id="fileformlabel"></div>
 							<div class="selectbutton">Browse</div>
 							<input type="file" class="file" name="xml" id="upload" onchange="getName(this.value);" />
 						</div>
 					</td>
-					<td><input type="submit" class="button" id="xmlval" value="Validate XML" onclick="document.theForm.func.value='xmlval';return validateForm();" /></td>					
+					<td><input type="submit" class="button" id="xmlval" value="Validate XML" onclick="document.theForm.func.value='xmlval';return validateFormXml();" /></td>					
 				</tr>
 				<tr>
 					<td>XSD</td>
 					<td>
-						<div class="fileform">
+						<div class="fileform" id='fileform1'>
 							<div id="fileformlabel1"></div>
 							<div class="selectbutton">Browse</div>
 							<input type="file" class="file" name="xsd" id="upload" onchange="getName1(this.value);" />
 						</div>					
 					</td>
-					<td><input type="submit" class="button" id="xsdval" value="Validate XSD" onclick="document.theForm.func.value='xsdval';return validateForm();" /></td>
+					<td><input type="submit" class="button" id="xsdval" value="Validate XSD" onclick="document.theForm.func.value='xsdval';return validateFormXsd();" /></td>
 				</tr>
 				<tr>
 					<td></td>

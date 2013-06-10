@@ -56,9 +56,51 @@ function validateForm () {
 
 	// });	
 var x=document.forms["theForm"]["xml"].value;
+var y=document.forms["theForm"]["xsd"].value;
+
 if (x==null || x=="")
   {
-  alert("Please, fill in what's empty");
-  return false;
+	alert("Please, fill in what's empty");
+	$('#fileform0').css('border-color', 'red');
+	return false;
+  }
+ else
+  {
+	$('#fileform0').css('border-color', '#CCCCCC');
+	if (y==null || y=="")
+	{
+		alert("Please, fill in what's empty");
+		$('#fileform1').css('border-color', 'red');
+		return false;
+	}
+	else
+	 $('#fileform1').css('border-color', '#CCCCCC');
   }
 };
+
+function validateFormXml () {
+var x=document.forms["theForm"]["xml"].value;
+
+if (x==null || x=="")
+  {
+	alert("Please, fill in what's empty");
+	$('#fileform0').css('border-color', 'red');
+	return false;
+  }
+ else
+	$('#fileform0').css('border-color', '#CCCCCC');
+
+}
+
+function validateFormXsd () {
+var y=document.forms["theForm"]["xsd"].value;
+	if (y==null || y=="")
+	{
+		alert("Please, fill in what's empty");
+		$('#fileform1').css('border-color', 'red');
+		return false;
+	}
+	else
+	 $('#fileform1').css('border-color', '#CCCCCC');
+
+}
