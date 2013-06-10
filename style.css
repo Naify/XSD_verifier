@@ -53,6 +53,7 @@ input {
     border: 1px solid #939494;
     border-radius: 2px;
     color: #FFFFFF;
+    cursor: pointer;
     float: right;
 	font: bold 14px arial;
     height: 25px;
@@ -70,7 +71,7 @@ input {
 }
 
 table, td {
-	font:bold 14px arial; 
+	font:bold 13px arial; 
 }
 
 .fileform { 
@@ -99,11 +100,24 @@ vertical-align: middle;
 width:220px;
 }
 
+.fileform #fileformlabel1 { 
+background-color: #FFFFFF;
+float: left;
+height: 18px;
+line-height: 22px;
+overflow: hidden;
+padding: 2px;
+text-align: left;
+vertical-align: middle;
+width:220px;
+}
+
 .fileform .selectbutton { 
     background-color: #A2A3A3;
     border: 1px solid #939494;
     border-radius: 2px;
     color: #FFFFFF;
+    cursor: pointer;
     float: right;
     font-size: 14px;
     height: 14px;
@@ -119,7 +133,7 @@ width:220px;
     position:absolute; 
     top:0; 
     left:0; 
-    width:100%; 
+    width:300px; 
     -moz-opacity: 0; 
     filter: alpha(opacity=0); 
     opacity: 0; 

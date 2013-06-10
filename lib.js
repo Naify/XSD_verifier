@@ -1,33 +1,10 @@
 $(document).ready(function() { 
 	var options = {
 		target: '#logbox'
-		// success: function(answer){		
-			// $("#logbox").html(answer); //Insert chat log into the #chatbox div				
-		// }
 	};
 
 	$('#former').ajaxForm(options);
 
-//some changes	
-	// $('#former').submit(function() {
-		// alert('ololo');
-		// $(this).find(':disabled').removeAttr('disabled');
-		// $(this).ajaxSubmit(options);
-		// return false;
-	// });
-
-	// $('#former').ajaxForm(function() {
-		// var options = {
-		  // target: "#logbox",
-		  // url: "server/server.py",
-		  // success: function() {
-			// alert("thx!");
-		  // }
-		// };
-
-		// alert("Thank you for your comment!"); 
-	// }); 
-	
 });
 
 function getName (str){
@@ -40,4 +17,48 @@ function getName (str){
     var filename = str.slice(i);			
     var uploaded = document.getElementById("fileformlabel");
     uploaded.innerHTML = filename;
+};
+
+function getName1 (str){
+    if (str.lastIndexOf('\\')){
+        var i = str.lastIndexOf('\\')+1;
+    }
+    else{
+        var i = str.lastIndexOf('/')+1;
+    }						
+    var filename = str.slice(i);			
+    var uploaded = document.getElementById("fileformlabel1");
+    uploaded.innerHTML = filename;
+};
+
+function validateForm () {
+	
+	// var options = {
+		// target: '#logbox'
+	// };
+
+	// $('#former').validate({
+
+		// Правила
+		// rules:{
+			// xml: 'required',
+			// xsd: 'required'
+		// },
+		// Текста предупреждений
+		// messages:{
+			// xml: 'Fill in the field, please',
+			// xsd: 'Fill in the field, please'
+		// },
+		// Обработчик и отправка данных
+		// submitHandler: function(form){
+			// $(form).ajaxForm(options);
+		// }
+
+	// });	
+var x=document.forms["theForm"]["xml"].value;
+if (x==null || x=="")
+  {
+  alert("Please, fill in what's empty");
+  return false;
+  }
 };

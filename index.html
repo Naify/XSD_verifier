@@ -5,6 +5,7 @@
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script src="http://malsup.github.io/min/jquery.form.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="lib.js"></script>	
 </head>
 <body>
@@ -20,26 +21,26 @@
 						<div class="fileform">
 							<div id="fileformlabel"></div>
 							<div class="selectbutton">Browse</div>
-							<input type="file" class="file" name="xml" id="upload" onchange="getName(this.value);" required/>
+							<input type="file" class="file" name="xml" id="upload" onchange="getName(this.value);" />
 						</div>
 					</td>
-					<td><input type="submit" class="button" id="xmlval" value="Validate XML" onclick="document.theForm.func.value='xmlval'" /></td>					
+					<td><input type="submit" class="button" id="xmlval" value="Validate XML" onclick="document.theForm.func.value='xmlval';return validateForm();" /></td>					
 				</tr>
 				<tr>
 					<td>XSD</td>
 					<td>
 						<div class="fileform">
-							<div id="fileformlabel"></div>
+							<div id="fileformlabel1"></div>
 							<div class="selectbutton">Browse</div>
-							<input type="file" class="file" name="xsd" id="upload" onchange="getName(this.value);" required/>
+							<input type="file" class="file" name="xsd" id="upload" onchange="getName1(this.value);" />
 						</div>					
 					</td>
-					<td><input type="submit" class="button" id="xsdval" value="Validate XSD" onclick="document.theForm.func.value='xsdval'" /></td>
+					<td><input type="submit" class="button" id="xsdval" value="Validate XSD" onclick="document.theForm.func.value='xsdval';return validateForm();" /></td>
 				</tr>
 				<tr>
 					<td></td>
 					<td></td>
-					<td><input type="submit" class="button" id="upload" value="Complete validation" onclick="document.theForm.func.value='comlpval'" /></td>
+					<td><input type="submit" class="button" id="upload" value="Complete validation" onclick="document.theForm.func.value='comlpval';return validateForm();" /></td>
 				</tr>
 			</table>
 
